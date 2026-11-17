@@ -16,3 +16,14 @@ export const getJwtSecret = (): string => {
 export const getClientOrigin = (): string =>
   process.env.CLIENT_ORIGIN ?? 'http://localhost:5173';
 // #endregion client-origin
+
+// #region deploy-settings
+// Where the server listens and which database it uses. The defaults are
+// what we've used all along, so a laptop with no settings still works.
+export const getPort = (): number => Number(process.env.PORT ?? 6790);
+
+export const getMongoUri = (): string =>
+  process.env.MONGO_URI ?? 'mongodb://127.0.0.1:27017';
+
+export const getDbName = (): string => process.env.DB_NAME ?? 'week9';
+// #endregion deploy-settings

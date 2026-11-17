@@ -1,9 +1,10 @@
 import { createServer } from 'node:http';
 import { app } from './app.js';
+import { getPort } from './config.js';
 import { connect } from './db/db.js';
 import { initSockets } from './sockets/sockets.js';
 
-const port = 6790;
+const port = getPort();
 
 await connect();
 
